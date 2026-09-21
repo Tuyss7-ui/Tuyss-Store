@@ -1,0 +1,412 @@
+/* Polesan tambahan untuk tampilan web TUYSS */
+:root {
+    --shadow-soft: 0 18px 50px rgba(0, 0, 0, .22);
+    --shadow-card: 0 12px 35px rgba(0, 0, 0, .16);
+}
+
+body {
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+a,
+.product,
+.filter,
+.method,
+.buy {
+    transition: transform .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #8b9aff;
+    outline-offset: 3px;
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+.btn:hover:not(.disabled),
+.buy:hover:not(:disabled),
+.cart:hover,
+.navbtn:hover,
+.method:hover,
+.filter:hover {
+    transform: translateY(-2px);
+}
+
+.primary:hover:not(.disabled),
+.buy:hover:not(:disabled) {
+    box-shadow: 0 8px 24px rgba(145, 127, 255, .28);
+}
+
+.secondary:hover,
+.navbtn:hover,
+.cart:hover,
+.method:hover,
+.filter:hover {
+    border-color: #7182e8;
+    background: rgba(113, 130, 232, .14);
+}
+
+.product,
+.benefit,
+.box {
+    box-shadow: var(--shadow-card);
+}
+
+.product:hover {
+    box-shadow: var(--shadow-soft);
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(255,255,255,.12), transparent 42%, rgba(255,255,255,.03));
+    pointer-events: none;
+}
+
+.account-terms {
+    display: none;
+    margin-top: 28px;
+    padding: 20px;
+    border: 1px solid rgba(248, 113, 113, .35);
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgba(127, 29, 29, .18), rgba(251, 191, 36, .06));
+}
+
+.account-terms ol {
+    display: grid;
+    gap: 14px;
+    padding-left: 24px;
+}
+
+.account-terms li {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
+    padding-left: 5px;
+}
+
+.account-terms li strong {
+    color: #fda4af;
+}
+
+.terms-agreement {
+    margin-top: 18px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(248, 113, 113, .25);
+    color: #fcd34d;
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+body.light .account-terms {
+    background: linear-gradient(135deg, rgba(254, 202, 202, .55), rgba(254, 243, 199, .55));
+}
+
+body.light .account-terms li strong {
+    color: #b91c1c;
+}
+
+body.light .terms-agreement {
+    color: #92400e;
+}
+
+.netflix-info {
+    display: none;
+    margin-top: 28px;
+    padding: 26px;
+    border: 1px solid #3b4775;
+    border-radius: 22px;
+    background: linear-gradient(135deg, rgba(16, 22, 42, .92), rgba(25, 15, 47, .82));
+    box-shadow: 0 18px 50px rgba(0, 0, 0, .2);
+    --text: #f5f6ff;
+    --muted: #98a2bd;
+    --line: #3b4775;
+    color: var(--text);
+}
+
+.netflix-info-head {
+    margin-bottom: 20px;
+}
+
+.netflix-badge {
+    display: inline-block;
+    color: #a58cff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+}
+
+.netflix-info h3 {
+    margin: 7px 0 5px;
+    font-size: 25px;
+    font-family: var(--font-display);
+    letter-spacing: -.02em;
+}
+
+.netflix-info-head p,
+.account-guide small,
+.account-guide li,
+.guide-note,
+.screen-limit span {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.netflix-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 13px;
+}
+
+.account-guide {
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, .035);
+}
+
+.account-guide.strong {
+    border-color: rgba(111, 130, 255, .55);
+    background: linear-gradient(145deg, rgba(111, 130, 255, .1), rgba(155, 108, 255, .08));
+}
+
+.account-guide-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.account-guide-title h4 {
+    font-size: 17px;
+    text-transform: uppercase;
+}
+
+.account-icon {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 12px;
+    color: white;
+    font-size: 20px;
+    background: linear-gradient(135deg, #e50914, #8f0710);
+}
+
+.account-guide ul {
+    display: grid;
+    gap: 9px;
+    padding-left: 17px;
+}
+
+.guide-note {
+    margin-top: 14px;
+    padding: 11px 12px;
+    border-left: 3px solid #e879f9;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, .18);
+    line-height: 1.7;
+}
+
+.guide-note strong {
+    color: #e9eaff;
+}
+
+.guide-note.positive {
+    border-left-color: #67e0c0;
+}
+
+.screen-limit {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin-top: 14px;
+    padding: 14px 16px;
+    border: 1px solid rgba(251, 191, 36, .35);
+    border-radius: 13px;
+    background: rgba(251, 191, 36, .07);
+}
+
+.screen-limit strong {
+    color: #fcd34d;
+    white-space: nowrap;
+    font-size: 11px;
+}
+
+.screen-limit span {
+    line-height: 1.6;
+}
+
+.account-rules {
+    margin-top: 14px;
+    padding: 16px;
+    border: 1px solid rgba(248, 113, 113, .35);
+    border-radius: 13px;
+    background: linear-gradient(135deg, rgba(127, 29, 29, .18), rgba(251, 191, 36, .06));
+}
+
+.account-rules-title {
+    margin-bottom: 10px;
+    color: #fcd34d;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.account-rules ul {
+    display: grid;
+    gap: 8px;
+    padding-left: 18px;
+}
+
+.account-rules li {
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.65;
+}
+
+.account-rules strong {
+    color: #fda4af;
+}
+
+.account-rules em {
+    color: #fcd34d;
+}
+
+.variant-select {
+    width: 100%;
+    margin: 4px 0 13px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--field-bg);
+    color: var(--text);
+    font-size: 10px;
+    cursor: pointer;
+}
+
+.product-notice {
+    display: grid;
+    gap: 8px;
+    min-height: 76px;
+    margin: 0 0 14px;
+    padding: 11px 12px;
+    border: 1px solid rgba(103, 224, 192, .28);
+    border-radius: 10px;
+    background: #0d4a39;
+    color: #f0fff9;
+    font-size: 9px;
+    line-height: 1.45;
+}
+
+.product-notice strong:last-child {
+    color: #b9f5df;
+}
+
+.icon,
+.tag {
+    position: relative;
+    z-index: 1;
+}
+
+.field::placeholder {
+    color: #68728f;
+}
+
+.field:focus {
+    border-color: #788bff;
+    box-shadow: 0 0 0 3px rgba(120, 139, 255, .12);
+}
+
+.payment-preview img {
+    object-fit: contain;
+}
+
+.toast {
+    pointer-events: none;
+}
+
+.whatsapp-fallback textarea {
+    resize: vertical;
+    line-height: 1.55;
+}
+
+#store,
+#benefits,
+#cara-order,
+#checkout {
+    scroll-margin-top: 115px;
+}
+
+@media (max-width: 560px) {
+    body {
+        padding-bottom: 78px;
+    }
+
+    .product-notice {
+        font-size: 9px;
+    }
+
+    .netflix-info {
+        padding: 18px;
+        border-radius: 18px;
+    }
+
+    .netflix-info h3 {
+        font-size: 22px;
+    }
+
+    .netflix-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .screen-limit {
+        display: block;
+    }
+
+    .screen-limit strong {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    h1 {
+        font-size: clamp(48px, 16vw, 72px);
+    }
+
+    .hero {
+        padding-top: 135px;
+    }
+
+    .box {
+        padding: 17px;
+    }
+
+    .receipt-row,
+    .order {
+        align-items: flex-start;
+    }
+
+    .receipt-row span,
+    .order span:first-child {
+        max-width: 70%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
